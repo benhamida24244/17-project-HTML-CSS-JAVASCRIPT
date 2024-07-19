@@ -1,0 +1,380 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;500;700&display=swap");
+
+:root {
+    --main-color: #f60f20;
+    --secondary-color: #1b206e;
+    --highlight-color: #c4a2fc;
+    --text-color: #111;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    background-color: #fff;
+    font-family: "Rubik";
+    color: var(--text-color);
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    background: var(--main-color) url(https://github.com/bradtraversy/creative-agency-website/blob/master/images/menu.png?raw=true);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 35px;
+}
+
+.about.active {
+    display: none !important;
+}
+.footer.active {
+    display: none !important;
+}
+.portfolio.active {
+    display: none !important;
+}
+.services.active {
+    display: none !important;
+}
+.menu.active {
+
+    background: var(--main-color) url(https://github.com/bradtraversy/creative-agency-website/blob/master/images/close.png?raw=true);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 30px;
+}
+.container.active {
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(10 , 1fr) 80px;
+    grid-template-rows: 120px auto auto auto auto;
+    grid-template-areas:
+    "logo logo logo logo logo logo logo logo logo  logo men"
+    "social . . link link link link . . . ."
+    "social . . link link link link . . . ."
+    "social . . link link link link . . . ."
+    "social . . link link link link . . . ."
+
+    ;
+}
+
+.container {
+    display: none;
+}
+
+.container .menu {
+    font-size: 40px;
+    width: 80px;
+    height: 80px;
+    padding-left: 10px;
+    grid-area:men;
+    background: var(--main-color) url(https://github.com/bradtraversy/creative-agency-website/blob/master/images/close.png?raw=true);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 25px;
+    cursor: pointer;
+}
+
+.container .logo {
+    grid-area: logo;
+    margin: 3rem;
+    font-size: 40px;
+}
+
+.container nav {
+ grid-area: link;
+}
+
+.container .social-bar {
+    height: 100%;
+    grid-area: social;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.container .social-bar ul {
+    position: fixed;
+    list-style: none;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    height: 38rem;
+}
+
+.container .social-bar .email-icon {
+    list-style: none;
+    margin-top: 45rem;
+    padding: 2rem;
+}
+
+.container .url {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.container .url ul {
+    list-style: none;
+    gap: 2rem;
+    padding: 2rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.container .url ul li a{
+ font-family: 'Courier New';
+ text-decoration: none;
+ font-size: 35px;
+ color: var(--text-color);
+}
+
+.container .url ul li a:hover {
+    color: var(--main-color);
+}
+
+.about h1 {
+    margin: 3rem;
+    font-size: 40px;
+}
+
+.about .main-info {
+    margin: 30px;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+}
+
+.about .main-info img {
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -5;
+}
+
+.about .main-info .info {
+    position: relative;
+    z-index: 10;  
+}
+
+.about .main-info .info h2 {
+      font-size: 35px;
+      margin: 15px;
+}
+
+.about .main-info .info p {
+      font-size: 18px;
+      margin: 0 15px;
+}
+
+.about .main-info .info .btn-get-started {
+    padding: 10px 15px;
+    font-size: 20px;
+    margin: 20px;
+    background: var(--main-color);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.services {
+    margin: 5rem;
+}
+
+.services h1 {
+    font-size: 30px;
+    margin-bottom: 1.5rem;
+}
+.services p {
+    font-size: 18px;
+    margin-bottom: 2rem;
+}
+
+.services h2 {
+    color: var(--secondary-color);
+    font-size: 25px;
+    margin-bottom: 1rem;
+}
+
+.services .services-grid img{
+    width: 100%;
+    height: auto;
+    max-width: 100px;
+    margin-bottom: 10px;
+}
+
+.services .services-grid {
+    margin: 10rem 0;
+    text-align: center;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3 , 1fr);
+}
+
+.services .services-grid div {
+    padding: 2rem;
+}
+.services .services-grid div:hover {
+    box-shadow:  0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* WORK */
+.portfolio {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  
+  .portfolio .item {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 5px;
+  }
+  
+  .portfolio .item img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .portfolio .item .action {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .portfolio .item .action a {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #fff;
+    padding: 5px 15px;
+  }
+  
+  .portfolio .item .action:hover {
+    opacity: 1;
+  }
+
+.footer {
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+    grid-template-areas: 
+    "title title title"
+    "contact contact address"
+    ;
+    gap: 40px;
+    margin:5rem;
+}
+
+.title {
+    grid-area: title;
+}
+
+.contact {
+    grid-area: contact;
+}
+.contact-info {
+    grid-area: address;
+}
+
+.footer h1 {
+    font-size: 36px;
+    margin-bottom: 1.5rem;
+}
+
+.footer p {
+    font-size: 20px;
+    margin-bottom: 2rem;
+}
+
+.footer .contact {
+    position: relative;
+    background-color: #f9f9f9;
+    width: 100%;
+    padding: 30px 30px 20px;
+}
+
+.footer .contact form {
+     width: 100%;
+}
+
+.footer .contact form .row {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+.footer .contact form .row .input50 ,
+.footer .contact form .row .input100
+{
+    width: 100%;
+    margin: 0;
+}
+
+.footer .contact form input,
+.footer .contact form textarea 
+    {
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    color: #111;
+    background: transparent;
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    font-size: 1rem;
+    font-family: inherit;
+    font-weight: 300;
+    margin: 10px 0;
+    resize: none;
+}
+
+.contact-info {
+    width: 100%;
+    margin-top: 20px;
+    background: #f9f9f9;
+    padding: 30px 30px 20px;
+}
+
+.contact-info .info-box {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+.contact-info .info-box .contact-icon {
+    width: 20px;
+    margin-right: 40px;
+}
+
+.contact-info .info-box .details p, .contact-info .info-box .details a {
+    color: var(--text-color);
+}
+
+
