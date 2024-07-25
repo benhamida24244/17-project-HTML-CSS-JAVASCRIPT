@@ -56,7 +56,7 @@ async function getApiDetails(api) {
     try {
         const response = await fetch(api);
         const data = await response.json();
-        console.log(data);
+        
         if (response.status === 404) {
             GetInfo.classList.remove('active');
             NotFoundInfo.classList.add('active');

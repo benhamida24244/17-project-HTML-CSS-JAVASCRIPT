@@ -1,0 +1,322 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap");
+
+:root {
+    --primary-color: #8e44ad;
+    --background-color: #b8c6db;
+    --secondary-background-color: #f5f7fa;
+    --light-color: #fff;
+    --border-color: #aaa;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(315deg, var(--background-color) 0%, var(--secondary-background-color) 100%);
+}
+
+.Memory-Cards {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Memory-Cards .addNewCard {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.Memory-Cards .contaienr {
+    height: 60vh;
+    width: 80%;
+    max-width: 580px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.showing {
+    display: block !important;
+}
+
+.Memory-Cards .contaienr h1 {
+    font-size: 2rem;
+    margin: 1rem;
+}
+
+.Memory-Cards .contaienr .flash-cards .btn-flipp {
+    align-self: flex-end;
+    padding: 1rem;
+    font-weight: 600;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.Memory-Cards .contaienr .flash-cards {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 60%;
+    padding: 1rem;
+    border-radius: 12px;
+    background: var(--light-color);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 0.4s ease
+}
+
+.contaienr .flash-cards .cards {
+    height: 100%;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.contaienr .flash-cards .cards .Answer {
+    display: none;
+}
+
+.contaienr .flash-cards .cards .Question {
+    display: none;
+}
+
+.clear-cards {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+.movecard {
+    display: flex;
+    margin: 2rem;
+    gap: 1rem;
+}
+
+.movecard .left,
+.movecard .right {
+    font-size: 20px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.Memory-Cards .addNewCard {
+    margin: 2rem;
+    padding: 8px 15px;
+    border-radius: 10px;
+    background-color: var(--background-color);
+    cursor: pointer;
+}
+
+.Memory-Cards .addNewCard:hover {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    transition: background-color 0.3s ease;
+}
+
+.clear-cards {
+    margin: 2rem;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--background-color);
+    cursor: pointer;
+    margin: 10px;
+}
+
+.fa-trash:before {
+    content: "\f1f8";
+    margin: 10px;
+}
+
+.clear-cards:hover {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    transition: background-color 0.3s ease;
+}
+
+.add-newCard {
+    background-color: var(--secondary-background-color);
+    border-top: 2px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.625rem 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    opacity: 0;
+    z-index: -2;
+    transition: all 0.3s ease;
+}
+
+.show {
+    opacity: 1 !important;
+    z-index: 2 !important;
+}
+
+.add-newCard h1 {
+    text-align: center;
+}
+
+.clse-btn {
+    padding: 2px 5px;
+    border-radius: 10px;
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.clse-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    transition: background-color 0.3s ease;
+}
+
+.add-newCard form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-newCard form button {
+    width: 80%;
+    border: none;
+    border-radius: 15px;
+    background-color: var(--background-color);
+    margin: 1rem;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.add-newCard form textarea {
+    border: 1px solid var(--border-color);
+    border-radius: 0.625rem;
+    font-size: 1rem;
+    padding: 0.75rem;
+    width: 31.25rem;
+    max-width: 90%;
+}
+
+.add-newCard form label {
+    display: block;
+    margin: 1.25rem 0 0.625rem;
+}
+
+@keyframes slide-right-to-left {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-left-to-right {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.cards .slide-in-left {
+    animation: slide-left-to-right 0.5s forwards;
+}
+
+.cards .slide-in-right {
+    animation: slide-right-to-left 0.5s forwards;
+}
+
+
+.flip-horizontal-top {
+    -webkit-animation: flip-horizontal-top 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+    animation: flip-horizontal-top 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+.flip-horizontal-bottom {
+	-webkit-animation: flip-horizontal-bottom 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+	        animation: flip-horizontal-bottom 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+.flip-vertical-right {
+	-webkit-animation: flip-vertical-right 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+	        animation: flip-vertical-right 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+ @-webkit-keyframes flip-vertical-right {
+    0% {
+      -webkit-transform: rotateY(0);
+              transform: rotateY(0);
+    }
+    100% {
+      -webkit-transform: rotateY(180deg);
+              transform: rotateY(180deg);
+    }
+  }
+  @keyframes flip-vertical-right {
+    0% {
+      -webkit-transform: rotateY(0);
+              transform: rotateY(0);
+    }
+    100% {
+      -webkit-transform: rotateY(180deg);
+              transform: rotateY(180deg);
+    }
+  }
+  
+@-webkit-keyframes flip-horizontal-top {
+    0% {
+        -webkit-transform: rotateX(0);
+        transform: rotateX(0);
+    }
+    100% {
+        -webkit-transform: rotateX(180deg);
+        transform: rotateX(180deg);
+    }
+}
+
+@keyframes flip-horizontal-top {
+    0% {
+        -webkit-transform: rotateX(0);
+        transform: rotateX(0);
+    }
+    100% {
+        -webkit-transform: rotateX(180deg);
+        transform: rotateX(180deg);
+    }
+}
+
+@-webkit-keyframes flip-horizontal-bottom {
+    0% {
+        -webkit-transform: rotateX(0);
+        transform: rotateX(0);
+    }
+    100% {
+        -webkit-transform: rotateX(-180deg);
+        transform: rotateX(-180deg);
+    }
+}

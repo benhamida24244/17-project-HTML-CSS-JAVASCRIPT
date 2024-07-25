@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Memory Cards</title>
+</head>
+<body>
+    <section class="add-newCard">
+        <div class="clse-btn"><i class="fa-solid fa-xmark"></i></div>
+        <div class="container">
+            <h1>Add New Card</h1>
+            <form id="add-card-form">
+                <label for="front-input">Question:</label>
+                <textarea type="text" placeholder="Enter Question" id="add-card-question"></textarea>
+                <label for="back-input">Answer:</label>
+                <textarea type="text" placeholder="Enter Answer" id="add-card-answer"></textarea>
+                <button type="submit" id="Btn-submit"> <i class="fa-solid fa-plus"></i> Add New Card</button>
+            </form>
+        </div>
+    </section>
+    <section class="Memory-Cards">
+        <div class="addNewCard"><i class="fa-solid fa-plus"></i>Add New Card</div>
+        <div class="contaienr">
+            <h1>Memory Cards</h1>
+            <div class="flash-cards">
+                <button class="btn-flipp"> <i class="fa-solid fa-retweet"></i>Flip</button>
+                <div class="cards" id="Cards-flash">
+                    <div class="Question showing">What is That ?</div>
+                    <div class="Answer">Flash Card</div>
+                </div>
+            </div>
+            <div class="movecard">
+                <button class="left"><i class="fa-solid fa-arrow-left"></i></button>
+                <div class="infoCard">0/0</div>
+                <button class="right"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div>
+        <button class="clear-cards"><i class="fa-solid fa-trash"></i>Clear Cards</button>
+    </section>
+    <script src="app.js"></script>
+</body>
+</html>
